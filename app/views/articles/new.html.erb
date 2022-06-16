@@ -1,0 +1,30 @@
+<h1>New article</h1>
+
+<div class="flex flex-wrap -mx-3 mb-6">
+  <%= form_with(model: @article) do |f| %>
+    <% if @article.errors.any? %>
+      <div style="color: red">
+        <h2><%= t '.errors' , count: @article.errors.count %> </h2>
+
+        <ul>
+          <% @article.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= f.label :title, style: "display: block" %>
+      <%= f.text_field :title %>
+    </div>
+
+    <div>
+      <%= f.label :content, style: "display: block" %>
+      <%= f.text_area :content %>
+    </div>
+    <div>
+      <%= f.submit t('.submit'), class: "btn-primary" %>
+    </div>
+  <% end %>
+</div>

@@ -31,3 +31,15 @@
 
 en:
   hello: "Hello world"
+  articles:
+    create:
+      success: "Article was successfully created."
+    show:
+      title: "Title:"
+      article: "Article "
+      content: "Content:"
+    new:
+      errors: 
+        one: "1 error prohibited this article from being saved"
+        other: "%{count} errors prohibited this article from being saved"
+      submit: "Submit"  
