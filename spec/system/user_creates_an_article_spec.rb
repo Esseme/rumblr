@@ -10,5 +10,6 @@ RSpec.describe "User creates an article" do
     click_button "Submit"
 
     expect(page).to have_content title
+    expect(page).to have_content content
   end
 end
