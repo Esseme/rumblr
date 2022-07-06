@@ -1,0 +1,23 @@
+references:
+  install_bundler: &install_bundler
+    run:
+      name: Install bundler
+      command: gem install bundler:2.3.10
+  setup: &setup
+    run:
+      name: Set up the environment
+      command: bin/setup
+  run_tests: &run_tests
+    run:
+      name: Run the test suite
+      command: COVERAGE=true bin/rake
+
+jobs:
+  build:
+    docker:
+      - image: "cimg/ruby:3.0.1"
+    steps:
+      - checkout
+      - <<: *install_bundler
+      - <<: *setup
+      - <<: *run_tests
