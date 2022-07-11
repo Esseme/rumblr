@@ -1,13 +1,15 @@
-<%= form_with(model: @article) do |f| %>
-  <div>
-    <%= f.label :title, style: "display: block" %>
-    <%= f.text_field :title %>
-  </div>
-  <div>
-    <%= f.label :content, style: "display: block" %>
-    <%= f.text_area :content %>
-  </div>
-  <div>
-    <%= f.submit "Submit" %>
-  </div>
-<% end %>
+<div class="flex flex-wrap -mx-3 mb-6">
+  <%= form_with(model: @article) do |f| %>
+    <div>
+      <%= f.label :title, style: "display: block" %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :content, style: "display: block" %>
+      <%= f.text_area :content %>
+    </div>
+    <div>
+      <%= f.submit "Submit", class: "btn-primary" %>
+    </div>
+  <% end %>
+</div>

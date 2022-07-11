@@ -25,3 +25,5 @@ group :test do
   gem "byebug"
   gem "webdrivers"
 end
+
+gem "tailwindcss-rails", "~> 2.0"
