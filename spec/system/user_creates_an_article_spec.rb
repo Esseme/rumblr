@@ -7,8 +7,11 @@ RSpec.describe "User creates an article" do
     fill_in "Content", with: "My awesome content"
     click_button "Submit"
 
-    expect(page).to have_content "This is my awesome title"
-    expect(page).to have_content "My awesome content"
+    expect(page).to have_content "Article was successfully created"
+    article = Article.last
+    expect(page).to have_content "Article ##{article.id}"
+    expect(page).to have_content article.title
+    expect(page).to have_content article.content
   end
 
   context "user provides wrong form data" do
