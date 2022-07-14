@@ -23,4 +23,14 @@ RSpec.describe "User creates an article" do
       expect(page).to have_content "Content can't be blank"
     end
   end
+
+  xit "shows a success message" do
+    visit root_path
+    fill_in "Title", with: "This is my awesome title"
+    fill_in "Content", with: "My awesome content"
+    click_button "Submit"
+
+    expect(page).to redirect_to(articles_path)
+    expect(flash[:notice]).to eq('Article was successfully created.')
+  end
 end
