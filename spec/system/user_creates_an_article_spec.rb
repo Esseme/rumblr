@@ -13,13 +13,14 @@ RSpec.describe "User creates an article" do
 
   context "user provides wrong form data" do
     it "shows an error on the form" do
-    visit root_path
-    fill_in "Title", with: ""
-    fill_in "Content", with: ""
-    click_button "Submit"
+      visit root_path
 
-    expect(page).to have_content "This is my awesome title"
-    expect(page).to have_content "My awesome content"
+      click_button "Submit"
+
+      expect(page).to have_content "New article"
+      expect(page).to have_content "2 errors prohibited this article from being saved"
+      expect(page).to have_content "Title can't be blank"
+      expect(page).to have_content "Content can't be blank"
     end
   end
 end
