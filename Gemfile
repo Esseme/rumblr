@@ -4,6 +4,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 ruby "3.0.1"
 
 gem "bootsnap", require: false
+gem "clearance"
 gem "importmap-rails"
 gem "jbuilder"
 gem "pg"
@@ -28,6 +29,7 @@ end
 
 group :test do
   gem "capybara"
+  gem "factory_bot_rails"
   gem "selenium-webdriver"
   gem "byebug"
   gem "webdrivers"
