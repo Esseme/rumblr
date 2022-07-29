@@ -20,6 +20,8 @@ Rails.application.configure do
 
   config.active_storage.service = :test
 
+  config.action_mailer.default_url_options = {host: "localhost:3000"}
+
   config.action_mailer.perform_caching = false
 
   config.action_mailer.delivery_method = :test
@@ -29,4 +31,5 @@ Rails.application.configure do
   config.active_support.disallowed_deprecation = :raise
 
   config.active_support.disallowed_deprecation_warnings = []
+  config.middleware.use Clearance::BackDoor
 end

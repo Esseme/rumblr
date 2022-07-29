@@ -2,7 +2,8 @@ require "rails_helper"
 
 RSpec.describe "User creates an article" do
   it "shows their amazing content" do
-    visit root_path
+    user = create(:user)
+    visit root_path(as: user)
     fill_in "Title", with: "This is my awesome title"
     fill_in "Content", with: "My awesome content"
     click_button "Submit"
@@ -16,7 +17,8 @@ RSpec.describe "User creates an article" do
 
   context "user provides wrong form data" do
     it "shows an error on the form" do
-      visit root_path
+      user = create(:user)
+      visit root_path(as: user)
 
       click_button "Submit"
 
