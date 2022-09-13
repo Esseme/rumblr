@@ -21,6 +21,7 @@ jobs:
   build:
     docker:
       - image: "cimg/ruby:3.0.1-browsers"
+      - image: "cimg/postgres:14.4"
     steps:
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
