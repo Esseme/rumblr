@@ -21,11 +21,20 @@ jobs:
   build:
     docker:
       - image: "cimg/ruby:3.0.1-browsers"
+        environment:
+          PGHOST: localhost
+          PGUSER: rumblr
+          RAILS_ENV: test
       - image: "cimg/postgres:14.4"
+        environment:
+          POSTGRES_USER: rumblr
+          POSTGRES_DB: rumblr_test
+          POSTGRES_PASSWORD: ""
     steps:
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
       - checkout
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
       - <<: *install_bundler
       - <<: *setup
       - <<: *run_tests
