@@ -1,6 +1,8 @@
-<p style="color: green"><%= notice %></p>
-<p><%= t '.article' %> #<%= @article.id %> </p>
+<div class="flex flex-col space-y-4">
+  <p style="color: green"><%= notice %></p>
+  <p><%= t '.article' %> #<%= @article.id %> </p>
 
-<p><strong><%= t '.title' %></strong><%= @article.title %></p>
+  <p><strong><%= t '.title' %></strong><%= @article.title %></p>
 
-<p><strong><%= t '.content' %></strong><%= @article.content %></p>
+  <p><strong><%= t '.content' %></strong><%= @article.content %></p>
+</div>
