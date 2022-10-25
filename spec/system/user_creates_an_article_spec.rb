@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 RSpec.describe "User creates an article" do
   it "shows their amazing content" do
@@ -26,5 +26,4 @@ RSpec.describe "User creates an article" do
       expect(page).to have_content "Content can't be blank"
     end
   end
-
 end

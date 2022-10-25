@@ -14,11 +14,12 @@ gem "sprockets-rails"
 gem "stimulus-rails"
 gem "tailwindcss-rails", "~> 2.0"
 gem "turbo-rails"
-gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
+gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri mingw x64_mingw ]
-  gem 'rspec-rails', '~> 5.0.0'
+  gem "debug", platforms: %i[mri mingw x64_mingw]
+  gem "standard"
+  gem "rspec-rails", "~> 5.0.0"
 end
 
 group :development do
@@ -30,6 +31,5 @@ group :test do
   gem "selenium-webdriver"
   gem "byebug"
   gem "webdrivers"
-  gem 'shoulda-matchers', '~> 5.0'
+  gem "shoulda-matchers", "~> 5.0"
 end
-
