@@ -12,6 +12,12 @@
   </head>
 
   <body>
+    <nav class="crumbs">
+        <ul>
+            <li class="crumb"><a href="#">Rumblr</a></li>
+            <li class="crumb"><%= link_to 'Sign in', sign_in_path %></li>
+        </ul>
+    </nav>
     <main class="container mx-auto mt-28 px-5 flex">
       <% if signed_in? %>
         Signed in as: <%= current_user.email %>
