@@ -1,15 +1,15 @@
 <%= form_for :session, url: session_path do |form| %>
-  <div class="text-field">
-    <%= form.label :email %>
-    <%= form.email_field :email %>
+  <div class="flex flex-col space-y-2">
+    <%= form.label :email, class: "text-sm font-light" %>
+    <%= form.email_field :email, class: "email-input" %>
   </div>
 
-  <div class="password-field">
-    <%= form.label :password %>
-    <%= form.password_field :password %>
+  <div class="flex flex-col space-y-2">
+    <%= form.label :password, class: "text-sm font-light" %>
+    <%= form.password_field :password, class: "password-input" %>
   </div>
 
-  <div class="submit-field">
+  <div class="space-y-4 signin-btn">
     <%= form.submit %>
   </div>
 
@@ -17,6 +17,8 @@
     <% if Clearance.configuration.allow_sign_up? %>
       <%= link_to t(".sign_up"), sign_up_path %>
     <% end %>
-    <%= link_to t(".forgot_password"), new_password_path %>
+    <div class="text-blue-600 text-sm font-light hover:underline">
+      <%= link_to t(".forgot_password"), new_password_path %>
+    </div>
   </div>
 <% end %>
