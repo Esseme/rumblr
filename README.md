@@ -22,3 +22,14 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+
+## Deploying
+
+If you have previously run the `./bin/setup` script, you can deploy to staging
+and production with:
+
+```shell
+./bin/deploy staging
+./bin/deploy production
+```
