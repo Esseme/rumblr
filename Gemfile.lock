@@ -200,6 +200,8 @@ GEM
       zeitwerk (~> 2.5)
     rainbow (3.1.1)
     rake (13.0.6)
+    recipient_interceptor (0.3.1)
+      mail
     redis (4.6.0)
     regexp_parser (2.5.0)
     reline (0.3.1)
@@ -308,6 +310,7 @@ DEPENDENCIES
   pg
   puma (~> 5.0)
   rails (~> 7.0.2, >= 7.0.2.3)
+  recipient_interceptor (~> 0.3.1)
   redis (~> 4.0)
   rspec-rails (~> 5.0.0)
   selenium-webdriver
