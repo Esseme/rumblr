@@ -121,6 +121,7 @@ GEM
       rake
     globalid (1.0.0)
       activesupport (>= 5.0)
+    honeybadger (5.0.2)
     i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.0)
@@ -310,6 +311,7 @@ DEPENDENCIES
   debug
   dotenv-rails
   factory_bot_rails
+  honeybadger (~> 5.0)
   importmap-rails
   jbuilder
   pg

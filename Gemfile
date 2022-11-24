@@ -5,6 +5,7 @@ ruby "3.0.1"
 
 gem "bootsnap", require: false
 gem "clearance"
+gem "honeybadger", "~> 5.0"
 gem "importmap-rails"
 gem "jbuilder"
 gem "pg"
