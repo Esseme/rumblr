@@ -1,10 +1,8 @@
-<div id="clearance" class="sign-in sign-in-form">
-  <div class="p-10 bg-white rounded-xl drop-shadow-lg space-y-5">
-    <h2><%= t(".title") %></h2>
-    <h2 class="text-center text-2xl"><%= t(".application_name") %></h2>
-    <div class="flex flex-col space-y-2">
-      <%= render partial: '/sessions/form' %>
-    </div>
+<div class="new-signin-form">
+  <div class="relative py-3 sm:w-96 mx-auto text-center">
+    <span class="text-2xl font-light "><%= t(".title") %></span>
+    <div class="mt-4 bg-white shadow-md rounded-lg text-left">
+      <div class="h-2 bg-purple-400 rounded-t-md"></div>
+      <%= render partial: '/sessions/form' %> 
   </div>
-
 </div>
