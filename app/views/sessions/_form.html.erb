@@ -1,24 +1,18 @@
 <%= form_for :session, url: session_path do |form| %>
-  <div class="flex flex-col space-y-2">
-    <%= form.label :email, class: "text-sm font-light" %>
-    <%= form.email_field :email, class: "email-input" %>
-  </div>
+  <div class="px-8 py-6">
+    <%= form.label :email, class: "block font-semibold" %>
+    <%= form.email_field :email, class: "email-input", placeholder: "Email" %>
+    <%= form.label :password, class: "block mt-3 font-semibold" %>
+    <%= form.password_field :password, class: "password-input", 
+      placeholder: "Password" %>
 
-  <div class="flex flex-col space-y-2">
-    <%= form.label :password, class: "text-sm font-light" %>
-    <%= form.password_field :password, class: "password-input" %>
-  </div>
-
-  <div class="space-y-4 signin-btn">
-    <%= form.submit %>
-  </div>
-
-  <div class="other-links">
-    <% if Clearance.configuration.allow_sign_up? %>
-      <%= link_to t(".sign_up"), sign_up_path %>
-    <% end %>
-    <div class="text-blue-600 text-sm font-light hover:underline">
-      <%= link_to t(".forgot_password"), new_password_path %>
+    <div class="flex justify-between items-baseline">
+      <%= form.submit class: "purple-btn" %>
+      <% if Clearance.configuration.allow_sign_up? %>
+        <%= link_to t(".sign_up"), sign_up_path %>
+      <% end %>
+        <%= link_to t(".forgot_password"), new_password_path, 
+          class: "text-sm hover:underline" %>
     </div>
   </div>
 <% end %>

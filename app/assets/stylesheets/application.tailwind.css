@@ -3,24 +3,21 @@
 @tailwind utilities;
 
 @layer components {
-  .btn-primary {
-    @apply bg-transparent hover:bg-blue-500 text-blue-700 
-    font-semibold hover:text-white py-2 px-4 border border-blue-500 
-    hover:border-transparent rounded; 
-  }
-  .sign-in-form {
-    @apply w-screen h-screen flex justify-center items-center bg-gradient-to-br
-    from-purple-700 to-amber-700;
-  }
   .email-input {
-    @apply w-96 px-3 py-2 rounded-md border border-slate-400;
+    @apply border w-full h-5 px-3 py-5 mt-2 hover:outline-none 
+    focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md;
   }
   .password-input {
-    @apply w-96 px-3 py-2 rounded-md border border-slate-400;
+    @apply border w-full h-5 px-3 py-5 mt-2 hover:outline-none 
+    focus:outline-none focus:ring-indigo-500 focus:ring-1 rounded-md;
   }
-  .signin-btn {
-    @apply w-full px-10 py-2 bg-blue-600 text-white rounded-md 
-    hover:bg-blue-500 hover:drop-shadow-md duration-300 ease-in;
+  .purple-btn {
+    @apply mt-4 bg-purple-500 text-white py-2 px-6 rounded-md
+    hover:bg-purple-600;
+  }
+  .new-signin-form {
+    @apply relative flex min-h-screen text-gray-800 antialiased 
+    flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12;
   }
 }
 
