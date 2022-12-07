@@ -2,6 +2,11 @@ require "rails_helper"
 require "support/features/clearance_helpers"
 
 RSpec.feature "Visitor signs in" do
+  scenario "navigation is hidden" do
+    visit sign_in_path
+    expect(page).not_to have_link("Sign in", href: sign_in_path)
+  end
+
   scenario "with valid email and password" do
     create_user "user@example.com", "password"
     sign_in_with "user@example.com", "password"
