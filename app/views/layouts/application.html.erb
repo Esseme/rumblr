@@ -12,8 +12,14 @@
   </head>
 
   <body>
-    <nav class="crumbs">
-    </nav>
+    <% unless current_page?(sign_in_path) %>
+      <nav class="crumbs">
+          <ul>
+              <li class="crumb"><a href="#"><%= t(".title") %></a></li>
+              <li class="crumb"><%= link_to t(".sign_in"), sign_in_path %></li>
+          </ul>
+      </nav>
+    <% end %>
     <main>
       <% if signed_in? %>
         Signed in as: <%= current_user.email %>
