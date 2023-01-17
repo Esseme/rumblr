@@ -19,5 +19,15 @@
     @apply relative flex min-h-screen text-gray-800 antialiased 
     flex-col justify-center overflow-hidden bg-gray-50 py-6 sm:py-12;
   }
+  .flash-notice {
+    @apply bg-green-300 text-green-900;
+  }
+  .flash-alert {
+    @apply bg-red-300 text-red-900;
+  }
+  .flash {
+    @apply bg-red-100 border border-red-400 text-red-700 
+    px-4 py-3 rounded relative;
+  }
 }
 
