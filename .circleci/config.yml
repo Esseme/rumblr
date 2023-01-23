@@ -31,9 +31,9 @@ jobs:
           POSTGRES_DB: rumblr_test
           POSTGRES_PASSWORD: ""
     steps:
+      - checkout
       - browser-tools/install-chrome
       - browser-tools/install-chromedriver
-      - checkout
       - run: dockerize -wait tcp://localhost:5432 -timeout 1m
       - <<: *install_bundler
       - <<: *setup
