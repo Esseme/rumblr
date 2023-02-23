@@ -1,34 +1,38 @@
-<div class="flex flex-col space-y-4">
-  <div>
-    <h1 class="text-xl font-semibold">New article</h1>
-  </div>
+<div class="relative py-3 mx-auto max-w-lg my-4">
+  <div class="max-w-lg rounded overflow-hidden shadow-lg p-20 mb-80">
+    <div class="card-header py-3">
+      <h1 class="font-bold uppercase text-2xl">New article</h1>
+    </div>
 
-  <div>
-    <%= form_with(model: @article, class: "space-y-4") do |f| %>
-      <% if @article.errors.any? %>
-        <div style="color: red">
-          <h2><%= t '.errors' , count: @article.errors.count %> </h2>
+    <div>
+      <%= form_with(model: @article, class: "space-y-4") do |f| %>
+        <% if @article.errors.any? %>
+          <div style="color: red">
+            <h2><%= t '.errors' , count: @article.errors.count %> </h2>
 
-          <ul>
-            <% @article.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
+            <ul>
+              <% @article.errors.each do |error| %>
+                <li><%= error.full_message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="space-y-2">
+          <%= f.label :title, class: "font-bold" %>
+          <%= f.text_field :title, class: "w-full mt-2 p-3 rounded-lg
+          focus:outline-none focus:shadow-outline" %>
+        </div>
+
+        <div class="space-y-2">
+          <%= f.label :content, class: "font-bold" %>
+          <%= f.text_area :content, class: "w-full h-32 mt-2 p-3 rounded-lg
+          focus:outline-none focus:shadow-outline" %>
+        </div>
+        <div class="space-y-4 flex justify-center">
+          <%= f.submit t('.submit'), class: "purple-btn w-96" %>
         </div>
       <% end %>
-
-      <div class="space-y-2">
-        <%= f.label :title, style: "display: block" %>
-        <%= f.text_field :title %>
-      </div>
-
-      <div class="space-y-2">
-        <%= f.label :content, style: "display: block" %>
-        <%= f.text_area :content %>
-      </div>
-      <div class="space-y-4">
-        <%= f.submit t('.submit'), class: "btn-primary" %>
-      </div>
-    <% end %>
+    </div>
   </div>
 </div>
