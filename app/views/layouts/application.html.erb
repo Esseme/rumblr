@@ -13,20 +13,42 @@
 
   <body>
     <% unless current_page?(sign_in_path) %>
-      <nav class="crumbs">
-          <ul>
-              <li class="crumb"><a href="#"><%= t(".title") %></a></li>
-              <li class="crumb"><%= link_to t(".sign_in"), sign_in_path %></li>
-          </ul>
-      </nav>
+      <div class="header sticky top-0 bg-white shadow-md flex
+                    items-center px-8 py-02 h-16 flow-root">
+        <div class="float-left mt-3">
+          <a class="p-2 text-3xl" href="#">
+            <%= t(".title") %>
+          </a>
+        </div>
+        <div class="float-right">
+            <nav class="nav font-semibold text-lg">
+              <ul class="flex items-center">
+                <li class="mb-1">
+                </li>
+                <% if signed_in? %>
+                  <li class="mb-1">
+                    Hello: <%= current_user.email %>
+                  </li>
+                  <li class="mb-1">
+                    <%= button_to 'Sign out', sign_out_path, method: :delete,
+                    class:"p-4 border-b-2 border-purple-500 border-opacity-0
+                    hover:border-opacity-100 hover:text-purple-500
+                    duration-200 cursor-pointer active" %>
+                  </li>
+                <% else %>
+                  <li class="mb-1">
+                    <%= link_to t(".sign_in"), sign_in_path,
+                    class:"p-4 border-b-2 border-purple-500 border-opacity-0
+                    hover:border-opacity-100 hover:text-purple-500
+                    duration-200 cursor-pointer active" %>
+                  </li>
+                <% end %>
+              </ul>
+            </nav>
+        </div>
+      </div>
     <% end %>
     <main>
-      <% if signed_in? %>
-        Signed in as: <%= current_user.email %>
-        <%= button_to 'Sign out', sign_out_path, method: :delete %>
-      <% else %>
-      <% end %>
-
       <%= render "flashes" %>
       <%= yield %>
     </main>
