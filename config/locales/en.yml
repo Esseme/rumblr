@@ -46,3 +46,7 @@ en:
   sessions:
     new:
       application_name: "Rumblr"
+  layouts:
+    application:
+      title: "Rumblr"
+      greeting: "Hello: %{email}"  
