@@ -1,15 +1,23 @@
-<div id="clearance" class="sign-up">
-  <h2><%= t(".title") %></h2>
+<div class="new-signin-form">
+  <div class="relative py-3 sm:w-96 mx-auto text-center">
+    <span class="text-2xl font-light "><%= t(".title") %></span>
 
-  <%= form_for @user do |form| %>
-    <%= render partial: '/users/form', object: form %>
+    <div class="mt-4 bg-white shadow-md rounded-lg text-left">
+      <div class="h-2 bg-purple-400 rounded-t-md"></div>
+        <div class="px-8 py-6 mb-24">
+          <%= form_for @user do |form| %>
+            <%= render partial: '/users/form', object: form %>
 
-    <div class="submit-field">
-      <%= form.submit %>
+            <div class="submit-field">
+              <%= form.submit class: "purple-btn w-80" %>
+            </div>
+
+            <div class="mt-3">
+              <%= link_to t(".sign_in"), sign_in_path, class: "text-base
+              hover:underline" %>
+            </div>
+          <% end %>
+        <div>
     </div>
-
-    <div class="other-links">
-      <%= link_to t(".sign_in"), sign_in_path %>
-    </div>
-  <% end %>
+  </div>
 </div>
