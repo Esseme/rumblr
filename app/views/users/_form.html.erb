@@ -1,10 +1,12 @@
 <div class="text-field">
   <%= form.label :email, class: "block font-semibold" %>
   <%= form.email_field :email, class: "email-input", placeholder: "Email"%>
+  <%= field_with_errors(@user, :email) %>
 </div>
 
 <div class="password-field">
   <%= form.label :password, class: "block mt-3 font-semibold" %>
   <%= form.password_field :password, class: "password-input",
     placeholder: "Password"%>
+  <%= field_with_errors(@user, :password) %>
 </div>
