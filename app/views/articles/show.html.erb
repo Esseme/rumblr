@@ -1,8 +1,14 @@
-<div class="flex flex-col space-y-4">
-  <p style="color: green"><%= notice %></p>
-  <p><%= t '.article' %> #<%= @article.id %> </p>
+<div class="relative py-3 mx-auto max-w-lg my-4">
+  <div class="max-w-lg rounded overflow-hidden shadow-lg p-20 mb-80">
+    <p style="color: green"><%= notice %></p>
+    <div class="card-header py-3">
+      <h1 class="font-bold uppercase text-2xl">
+        <p><%= t '.article' %> #<%= @article.id %> </p>
+      </h1>
+    </div>
 
-  <p><strong><%= t '.title' %></strong><%= @article.title %></p>
+    <p><strong><%= t '.title' %></strong><%= @article.title %></p>
 
-  <p><strong><%= t '.content' %></strong><%= @article.content %></p>
+    <p><strong><%= t '.content' %></strong><%= @article.content %></p>
+  </div>
 </div>
