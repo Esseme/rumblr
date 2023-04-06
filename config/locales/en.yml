@@ -43,6 +43,10 @@ en:
         one: "1 error prohibited this article from being saved"
         other: "%{count} errors prohibited this article from being saved"
       submit: "Submit"  
+    edit:
+      submit: "Submit"
+    update:
+      success: "Article was successfully edited"
   sessions:
     new:
       application_name: "Rumblr"
