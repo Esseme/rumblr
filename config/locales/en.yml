@@ -54,3 +54,4 @@ en:
     application:
       title: "Rumblr"
       greeting: "Hello: %{email}"  
+      create_article: "Create Article"
