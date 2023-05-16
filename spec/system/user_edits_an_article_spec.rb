@@ -32,21 +32,5 @@ RSpec.describe "User edits an article" do
       expect(page).to have_content edited_article.title
       expect(page).to have_content edited_article.content
     end
-
-    xit "shows the unedited article with a flash" do
-      user = create(:user)
-      visit root_path(as: user)
-      fill_in "Title", with: "This is my awesome title"
-      fill_in "Content", with: "My awesome content"
-      click_button "Submit"
-      article = Article.last
-      visit edit_article_path(as: user, id: article.id)
-      click_button "Submit"
-
-      expect(page).to have_content "No changes were made to the article"
-      expect(page).to have_content "Article ##{article.id}"
-      expect(page).to have_content article.title
-      expect(page).to have_content article.content
-    end
   end
 end
