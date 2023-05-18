@@ -1,0 +1,8 @@
+<div class="relative py-3 mx-auto max-w-lg my-4">
+  <% @articles.each do |article| %>
+    <div class="max-w-lg rounded overflow-hidden shadow-xl p-10 mb-10">
+      <p class="text-xl font-bold mb-2"><%= article.title %> </p>
+      <p class="text-gray-700"><%= article.content %> </p>
+    </div>
+  <% end %>
+</div>
