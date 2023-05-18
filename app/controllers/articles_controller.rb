@@ -1,6 +1,10 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update]
 
+  def index
+    @articles = current_user.articles.all
+  end
+
   def new
     @article = Article.new
   end
