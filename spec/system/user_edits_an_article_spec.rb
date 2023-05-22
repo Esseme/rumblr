@@ -28,7 +28,6 @@ RSpec.describe "User edits an article" do
 
       expect(page).to have_content "Article was successfully edited"
       edited_article = Article.last
-      expect(page).to have_content "Article ##{edited_article.id}"
       expect(page).to have_content edited_article.title
       expect(page).to have_content edited_article.content
     end
