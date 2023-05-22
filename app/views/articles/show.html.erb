@@ -3,14 +3,14 @@
     <p style="color: green"><%= notice %></p>
     <div class="card-header py-3">
       <h1 class="font-bold uppercase text-2xl">
-        <p><%= t '.article' %> #<%= @article.id %> </p>
+        <p><%= @article.title %></p>
       </h1>
     </div>
 
-    <p><strong><%= t '.title' %></strong><%= @article.title %></p>
-
-    <p><strong><%= t '.content' %></strong><%= @article.content %></p>
-
-    <%= link_to "Edit", edit_article_path(@article) %>
+    <p><%= @article.content %></p>
+    <div class="space-y-4 flex text-center">
+      <%= link_to "Edit", edit_article_path(@article),
+        class: "purple-btn w-96" %>
+    </div>
   </div>
 </div>

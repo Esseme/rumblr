@@ -11,7 +11,6 @@ RSpec.describe "User creates an article" do
     expect(page).to have_content "Article was successfully created"
     article = Article.last
     expect(article.user_id).to eq(user.id)
-    expect(page).to have_content "Article ##{article.id}"
     expect(page).to have_content article.title
     expect(page).to have_content article.content
   end
