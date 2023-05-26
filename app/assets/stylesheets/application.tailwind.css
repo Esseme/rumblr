@@ -26,11 +26,14 @@
     @apply bg-red-300 text-red-900;
   }
   .flash {
-    @apply bg-red-100 border border-red-400 text-red-700 
-    px-4 py-3 rounded relative;
+    @apply bg-red-100 border border-red-400 text-red-700
+    px-4 py-3 w-fit rounded relative;
   }
   .form_error {
     @apply text-red-400;
+  }
+  .center-div {
+    @apply flex justify-center items-center mt-6;
   }
 }
 
