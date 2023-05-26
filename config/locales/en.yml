@@ -47,6 +47,7 @@ en:
       submit: "Submit"
     update:
       success: "Article was successfully edited"
+      no_edit: "No changes were made to the article"
   sessions:
     new:
       application_name: "Rumblr"
