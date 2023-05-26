@@ -27,7 +27,11 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      redirect_to @article, notice: t(".success")
+      if @article.previous_changes.empty?
+        redirect_to @article, notice: t(".no_edit")
+      else
+        redirect_to @article, notice: t(".success")
+      end
     else
       render :edit, status: :unprocessable_entity
     end
