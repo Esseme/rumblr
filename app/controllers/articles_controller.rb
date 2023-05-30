@@ -27,7 +27,7 @@ class ArticlesController < ApplicationController
 
   def update
     if @article.update(article_params)
-      if @article.previous_changes.empty?
+      if @article.previously_changed?
         redirect_to @article, notice: t(".no_edit")
       else
         redirect_to @article, notice: t(".success")
