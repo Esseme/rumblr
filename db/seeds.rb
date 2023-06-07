@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+unless User.exists?(admin: true)
+  User.create!(email: ENV.fetch("ADMIN_EMAIL"),
+    password: ENV.fetch("ADMIN_PASSWORD"), admin: true)
+end
