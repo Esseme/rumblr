@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "3.0.1"
 
+gem "administrate", git: "https://github.com/oroth8/administrate.git"
 gem "bootsnap", require: false
 gem "clearance"
 gem "honeybadger", "~> 5.0"
