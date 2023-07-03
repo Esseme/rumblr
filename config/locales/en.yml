@@ -56,3 +56,5 @@ en:
       title: "Rumblr"
       greeting: "Hello: %{email}"  
       create_article: "Create Article"
+      articles: "Articles"
+      view_articles: "View Articles"
