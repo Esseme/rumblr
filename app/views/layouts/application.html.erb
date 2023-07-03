@@ -27,13 +27,25 @@
                   <li class="mb-1">
                     <%= t(".greeting", email: current_user.email) %>
                   </li>
-                  <li class="mb-1">
-                    <%= button_to t(".create_article"), new_article_path,
-                      method: :get, class:"p-4 border-b-2 border-purple-500
-                      border-opacity-0 hover:border-opacity-100
-                      hover:text-purple-500 duration-200 cursor-pointer active"
-                    %>
-                  </li>
+                  <div x-data="{ open: false }">
+                    <button @click="open = !open" class="p-4 border-b-2
+                                    border-purple-500 border-opacity-0
+                                    hover:border-opacity-100
+                                    hover:text-purple-500
+                                    duration-200 cursor-pointer active">
+                      <%= t(".articles") %>
+                    </button>
+                    <div x-show="open" class="drop-down">
+                      <ul id="accordion">
+                        <li class="li-item">
+                          <%= link_to t(".view_articles"), articles_path %>
+                        </li>
+                       <li class="li-item">
+                         <%= link_to t(".create_article"), new_article_path %>
+                       </li>
+                     </ul>
+                    </div>
+                  </div>
                   <li class="mb-1">
                     <%= button_to t(".sign_out"), sign_out_path, method: :delete,
                     class:"p-4 border-b-2 border-purple-500 border-opacity-0

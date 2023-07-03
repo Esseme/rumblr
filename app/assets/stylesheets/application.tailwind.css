@@ -35,5 +35,11 @@
   .center-div {
     @apply flex justify-center items-center mt-6;
   }
+  .li-item {
+    @apply mb-1 hover:text-purple-500;
+  }
+  .drop-down {
+    @apply mt-1 bg-white shadow-md p-4 absolute rounded w-40 overflow-y-scroll;
+  }
 }
 
