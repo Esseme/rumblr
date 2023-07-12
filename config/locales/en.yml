@@ -48,6 +48,8 @@ en:
     update:
       success: "Article was successfully edited"
       no_edit: "No changes were made to the article"
+    index:
+      edit_article: "Edit Article"
   sessions:
     new:
       application_name: "Rumblr"
