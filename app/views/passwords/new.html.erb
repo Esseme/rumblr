@@ -11,8 +11,17 @@
       <%= form_for :password, url: passwords_path do |form| %>
         <div class="my-2">
           <%= form.label :email, class: "font-bold" %>
-          <%= form.text_field :email, class: "w-full mt-2 p-3 rounded-lg
-          focus:outline-none focus:shadow-outline" %>
+          <%= form.email_field(
+            :email,
+            class: %w[
+              w-full
+              mt-2
+              p-3
+              rounded-lg
+              focus:outline-none
+              focus:shadow-outline
+            ]
+          ) %>
         </div>
         <div class="submit-field">
           <%= form.submit class: "purple-btn w-full mt-9 p-2" %>
