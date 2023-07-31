@@ -15,6 +15,17 @@ RSpec.describe "User creates an article" do
     expect(page).to have_content article.content
   end
 
+  context "user tries to edit somebody else's article" do
+    it "shows an 'unauthorized' error" do
+      article = create :article
+      other_author = create :user
+
+      visit edit_article_path article, as: other_author
+
+      expect(page).to have_content "You cannot edit this article."
+    end
+  end
+
   context "user provides wrong form data" do
     it "shows an error on the form" do
       user = create(:user)

@@ -1,12 +1,12 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :edit, :update]
+  skip_before_action :require_login, only: [:show]
 
   def index
     @articles = current_user.articles.all
   end
 
   def new
-    @article = Article.new
+    @article = current_user.articles.build
   end
 
   def create
@@ -20,12 +20,20 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @article = Article.find(params[:id])
   end
 
   def edit
+    @article = Article.find(params[:id])
+
+    unless @article.user == current_user
+      flash[:alert] = t(".cannot_edit")
+      redirect_back(fallback_location: root_path)
+    end
   end
 
   def update
+    @article = current_user.articles.find(params[:id])
     if @article.update(article_params)
       if @article.previously_changed?
         redirect_to @article, notice: t(".no_edit")
@@ -38,10 +46,6 @@ class ArticlesController < ApplicationController
   end
 
   private
-
-  def set_article
-    @article = current_user.articles.find(params[:id])
-  end
 
   def article_params
     params.require(:article).permit(:title, :content)
