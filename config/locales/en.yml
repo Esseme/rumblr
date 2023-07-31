@@ -45,6 +45,7 @@ en:
       submit: "Submit"  
     edit:
       submit: "Submit"
+      cannot_edit: "You cannot edit this article."
     update:
       success: "Article was successfully edited"
       no_edit: "No changes were made to the article"

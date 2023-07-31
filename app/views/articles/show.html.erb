@@ -8,8 +8,10 @@
 
     <p><%= @article.content %></p>
     <div class="space-y-4 flex text-center">
-      <%= link_to "Edit", edit_article_path(@article),
-        class: "purple-btn w-96" %>
+      <% if @article.user == current_user %>
+        <%= link_to "Edit", edit_article_path(@article),
+                    class: "purple-btn w-96" %>
+      <% end %>
     </div>
   </div>
 </div>

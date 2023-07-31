@@ -1,7 +1,8 @@
 class Article < ApplicationRecord
-  validates_presence_of :title
-  validates_presence_of :content
   belongs_to :user
+
+  validates :title, presence: true
+  validates :content, presence: true
 
   def previously_changed?
     previous_changes.empty?
