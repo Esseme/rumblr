@@ -56,8 +56,8 @@ en:
       application_name: "Rumblr"
   layouts:
     application:
-      title: "Rumblr"
-      greeting: "Hello: %{email}"  
-      create_article: "Create Article"
       articles: "Articles"
+      create_article: "Create Article"
+      greeting: "Hello: %{email}"  
+      title: "Rumblr"
       view_articles: "View Articles"
