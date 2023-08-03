@@ -28,8 +28,7 @@
                     <%= t(".greeting", email: current_user.email) %>
                   </li>
                   <div x-data="{ open: false }">
-                    <button @click="open = !open" class="p-4 border-b-2
-                                    border-purple-500 border-opacity-0
+                    <button @click="open = !open" class="link
                                     hover:border-opacity-100
                                     hover:text-purple-500
                                     duration-200 cursor-pointer active">
@@ -47,17 +46,32 @@
                     </div>
                   </div>
                   <li class="mb-1">
-                    <%= button_to t(".sign_out"), sign_out_path, method: :delete,
-                    class:"p-4 border-b-2 border-purple-500 border-opacity-0
-                    hover:border-opacity-100 hover:text-purple-500
-                    duration-200 cursor-pointer active" %>
+                    <%= button_to(
+                      t(".sign_out"),
+                      sign_out_path,
+                      method: :delete,
+                      class: %w(
+                        link
+                        hover:border-opacity-100
+                        hover:text-purple-500
+                        duration-200
+                        cursor-pointer active"
+                      )
+                    ) %>
                   </li>
                 <% else %>
                   <li class="mb-1">
-                    <%= button_to t(".sign_in"), sign_in_path,
-                    class:"p-4 border-b-2 border-purple-500 border-opacity-0
-                    hover:border-opacity-100 hover:text-purple-500
-                    duration-200 cursor-pointer active" %>
+                    <%= button_to(
+                      t(".sign_in"),
+                      sign_in_path,
+                      class: %w(
+                        link
+                        hover:border-opacity-100
+                        hover:text-purple-500
+                        duration-200
+                        cursor-pointer active"
+                      )
+                    ) %>
                   </li>
                 <% end %>
               </ul>
