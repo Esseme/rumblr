@@ -4,12 +4,15 @@ RSpec.describe "User views their articles" do
   it "displays a list of articles created by the user" do
     user = create(:user)
     visit root_path(as: user)
-    3.times { create(:article, user: user) }
+
+    create :article, user: user, title: "TEST_ARTICLE_1"
+    create :article, user: user, title: "TEST_ARTICLE_2"
+    create :article, title: "TEST_ARTICLE_3"
+
     visit articles_path
 
-    user.articles.each do |article|
-      expect(page).to have_content(article.title)
-      expect(page).to have_content(article.content)
-    end
+    expect(page).to have_content "TEST_ARTICLE_1"
+    expect(page).to have_content "TEST_ARTICLE_2"
+    expect(page).not_to have_content "TEST_ARTICLE_3"
   end
 end
