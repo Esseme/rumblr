@@ -3,5 +3,5 @@ updates:
   - package-ecosystem: "bundler"
     directory: "/"
     schedule:
-      internal: "daily"
+      interval: "daily"
     labels: [ ]
