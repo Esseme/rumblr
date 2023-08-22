@@ -193,7 +193,7 @@ GEM
       digest
       net-protocol
       timeout
-    nio4r (2.5.8)
+    nio4r (2.5.9)
     nokogiri (1.15.4)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
@@ -202,7 +202,7 @@ GEM
       ast (~> 2.4.1)
     pg (1.4.3)
     public_suffix (5.0.3)
-    puma (5.6.4)
+    puma (6.3.1)
       nio4r (~> 2.0)
     racc (1.7.1)
     rack (2.2.8)
@@ -347,7 +347,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pg
-  puma (~> 5.0)
+  puma (~> 6.3)
   rails (~> 7.0.2, >= 7.0.2.3)
   recipient_interceptor (~> 0.3.1)
   redis (~> 4.0)
