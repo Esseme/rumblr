@@ -139,7 +139,7 @@ GEM
     globalid (1.2.1)
       activesupport (>= 6.1)
     google-protobuf (3.23.3)
-    honeybadger (5.0.2)
+    honeybadger (5.2.1)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     importmap-rails (1.1.0)
@@ -357,7 +357,7 @@ DEPENDENCIES
   debug
   dotenv-rails
   factory_bot_rails
-  honeybadger (~> 5.0)
+  honeybadger (~> 5.2)
   importmap-rails
   jbuilder
   pg

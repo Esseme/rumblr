@@ -6,7 +6,7 @@ ruby "3.0.1"
 gem "administrate", git: "https://github.com/oroth8/administrate.git"
 gem "bootsnap", require: false
 gem "clearance"
-gem "honeybadger", "~> 5.0"
+gem "honeybadger", "~> 5.2"
 gem "importmap-rails"
 gem "jbuilder"
 gem "pg"
