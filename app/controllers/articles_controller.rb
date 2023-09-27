@@ -1,8 +1,8 @@
 class ArticlesController < ApplicationController
-  skip_before_action :require_login, only: [:show]
+  skip_before_action :require_login, only: [:show, :index]
 
   def index
-    @articles = current_user.articles.order(created_at: :asc)
+    @articles = Article.all.order(created_at: :asc)
   end
 
   def new

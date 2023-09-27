@@ -7,5 +7,12 @@ Rails.application.routes.draw do
   end
   resources :articles
   resources :users
-  root "articles#new"
+
+  constraints Clearance::Constraints::SignedIn.new do
+    root to: "articles#new", as: :signed_in_root
+  end
+
+  constraints Clearance::Constraints::SignedOut.new do
+    root to: "articles#index"
+  end
 end
