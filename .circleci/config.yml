@@ -24,7 +24,7 @@ references:
 jobs:
   build:
     docker:
-      - image: "cimg/ruby:3.0.1-browsers"
+      - image: "cimg/ruby:3.2.2-browsers"
         environment:
           PGHOST: localhost
           PGUSER: rumblr
