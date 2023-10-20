@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.0.1"
+ruby File.read(".ruby-version").strip
 
 gem "administrate", git: "https://github.com/oroth8/administrate.git"
 gem "bootsnap", require: false
