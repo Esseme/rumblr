@@ -61,3 +61,6 @@ en:
       greeting: "Hello: %{email}"  
       title: "Rumblr"
       view_articles: "View Articles"
+  users:
+    show:
+      no_articles: "Author has no articles yet"
