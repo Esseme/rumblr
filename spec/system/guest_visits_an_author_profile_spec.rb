@@ -13,5 +13,6 @@ RSpec.describe "Guest visits an author profile" do
     expect(page).to have_content "TEST_ARTICLE_1"
     expect(page).to have_content "TEST_ARTICLE_2"
     expect(page).not_to have_content "TEST_ARTICLE_3"
+    expect(page).not_to have_content "Edit Article"
   end
 end
