@@ -9,5 +9,6 @@ RSpec.describe "Guest visits the home page" do
 
     expect(page).to have_content "TEST_ARTICLE_1"
     expect(page).to have_content "TEST_ARTICLE_2"
+    expect(page).not_to have_content "Edit Article"
   end
 end
