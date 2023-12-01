@@ -3,7 +3,5 @@ class User < ApplicationRecord
 
   has_many :articles
 
-  def user_name
-    email.gsub(/@.*$/, "")
-  end
+  validates :name, presence: true
 end
