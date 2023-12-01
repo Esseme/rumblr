@@ -8,5 +8,6 @@
 
 unless User.exists?(admin: true)
   User.create!(email: ENV.fetch("ADMIN_EMAIL"),
-    password: ENV.fetch("ADMIN_PASSWORD"), admin: true)
+    password: ENV.fetch("ADMIN_PASSWORD"), name: ENV.fetch("ADMIN_NAME"),
+    admin: true)
 end
