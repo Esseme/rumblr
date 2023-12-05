@@ -6,7 +6,7 @@ ruby File.read(".ruby-version").strip
 gem "administrate", git: "https://github.com/oroth8/administrate.git"
 gem "bootsnap", require: false
 gem "clearance"
-gem "honeybadger", "~> 5.3"
+gem "honeybadger", "~> 5.4"
 gem "importmap-rails"
 gem "jbuilder"
 gem "pg"
