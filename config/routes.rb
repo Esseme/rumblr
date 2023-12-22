@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
   resources :articles
   resources :users
+  resources :authors, only: :show
 
   constraints Clearance::Constraints::SignedIn.new do
     root to: "articles#new", as: :signed_in_root

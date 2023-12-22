@@ -8,7 +8,7 @@ RSpec.describe "Guest visits an author profile" do
     create :article, user: author, title: "TEST_ARTICLE_2"
     create :article, title: "TEST_ARTICLE_3"
 
-    visit user_path(author)
+    visit author_path(author)
 
     expect(page).to have_content "TEST_ARTICLE_1"
     expect(page).to have_content "TEST_ARTICLE_2"
