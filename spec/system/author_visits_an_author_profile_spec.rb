@@ -6,7 +6,7 @@ RSpec.describe "Author visits an author profile" do
       author = create(:user)
       create :article, user: author
 
-      visit user_path(author, as: author)
+      visit author_path(author, as: author)
 
       expect(page).to have_content "Edit Article"
     end
@@ -17,7 +17,7 @@ RSpec.describe "Author visits an author profile" do
       somebody_else = create(:user)
       create :article, user: somebody_else
 
-      visit user_path(somebody_else, as: author)
+      visit author_path(somebody_else, as: author)
 
       expect(page).not_to have_content "Edit Article"
     end
