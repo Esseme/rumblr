@@ -1,7 +1,17 @@
+---
 version: 2
+
 updates:
-  - package-ecosystem: "bundler"
+  - package-ecosystem: bundler
     directory: "/"
     schedule:
-      interval: "daily"
-    labels: [ ]
+      interval: weekly
+      time: "02:00"
+      timezone: "Etc/UTC"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: weekly
+      time: "02:00"
+      timezone: "Etc/UTC"
