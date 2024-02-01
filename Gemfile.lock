@@ -148,6 +148,8 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    friendly_id (5.5.1)
+      activerecord (>= 4.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     google-protobuf (3.24.4)
@@ -383,6 +385,7 @@ DEPENDENCIES
   debug
   dotenv-rails
   factory_bot_rails
+  friendly_id
   honeybadger (~> 5.4)
   importmap-rails
   jbuilder
