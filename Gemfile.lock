@@ -1,14 +1,14 @@
 GIT
   remote: https://github.com/oroth8/administrate.git
-  revision: 29f05cad3b3b839283bb12292a505e86102c2178
+  revision: 0176a6ab6a7056a4cc0ee4798bae465cc45fb5a9
   specs:
-    administrate (0.18.0)
-      actionpack (>= 5.0)
-      actionview (>= 5.0)
-      activerecord (>= 5.0)
-      dartsass-rails (~> 0.4)
-      jquery-rails (>= 4.0)
-      kaminari (>= 1.0)
+    administrate (0.20.1)
+      actionpack (>= 6.0, < 8.0)
+      actionview (>= 6.0, < 8.0)
+      activerecord (>= 6.0, < 8.0)
+      dartsass-rails (~> 0.5)
+      jquery-rails (~> 4.6.0)
+      kaminari (~> 1.2.2)
       selectize-rails (~> 0.6)
 
 GEM
@@ -151,7 +151,8 @@ GEM
       activerecord (>= 4.0.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
-    google-protobuf (3.24.4)
+    google-protobuf (4.26.0)
+      rake (>= 13)
     honeybadger (5.4.1)
     i18n (1.14.4)
       concurrent-ruby (~> 1.0)
@@ -310,8 +311,8 @@ GEM
       rubocop-ast (>= 1.30.0, < 2.0)
     ruby-progressbar (1.13.0)
     rubyzip (2.3.2)
-    sass-embedded (1.69.4)
-      google-protobuf (~> 3.23)
+    sass-embedded (1.72.0)
+      google-protobuf (>= 3.25, < 5.0)
       rake (>= 13.0.0)
     selectize-rails (0.12.6)
     selenium-webdriver (4.10.0)
