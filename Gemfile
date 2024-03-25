@@ -38,5 +38,5 @@ group :test do
   gem "selenium-webdriver"
   gem "byebug"
   gem "webdrivers"
-  gem "shoulda-matchers", "~> 6.0"
+  gem "shoulda-matchers", "~> 6.2"
 end
