@@ -18,5 +18,11 @@ module.exports = {
     require('@tailwindcss/forms'),
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/typography'),
+  ],
+  safelist: [
+   'flash-alert',
+   'flash-notice',
+   'flash-error',
+   'flash-success'
   ]
 }

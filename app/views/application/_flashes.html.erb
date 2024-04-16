@@ -2,9 +2,7 @@
   <div class="center-div">
     <div role="alert">
       <% user_facing_flashes.each do |key, value| -%>
-        <div class="font-bold <%= key == 'notice' ? 'flash-notice' :
-          'flash-alert' %>"><%= value %>
-        </div>
+        <div class="font-bold flash-<%= key %>"><%= value %></div>
       <% end -%>
     </div>
   </div>
