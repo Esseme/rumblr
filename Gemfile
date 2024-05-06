@@ -17,7 +17,7 @@ gem "redis", "~> 5.2"
 gem "recipient_interceptor", "~> 0.3.1"
 gem "sprockets-rails"
 gem "stimulus-rails"
-gem "tailwindcss-rails", "~> 2.5"
+gem "tailwindcss-rails", "~> 2.6"
 gem "turbo-rails"
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
 
