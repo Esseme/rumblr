@@ -9,6 +9,13 @@ Rails.application.routes.draw do
   resources :users
   resources :authors, only: :show
 
+  resources :users,
+    only: Clearance.configuration.user_actions do
+      resource :password,
+        controller: "passwords",
+        only: [:edit, :update]
+    end
+
   constraints Clearance::Constraints::SignedIn.new do
     root to: "articles#new", as: :signed_in_root
   end
