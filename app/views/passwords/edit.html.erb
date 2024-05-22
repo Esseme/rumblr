@@ -1,18 +1,34 @@
-<div id="clearance" class="password-reset">
-  <h2><%= t(".title") %></h2>
+<div class="relative py-3 mx-auto max-w-lg my-4">
+  <div class="max-w-lg rounded overflow-hidden shadow-lg p-20 mb-80">
+    <div id="clearance" class="password-reset">
+      <div class="card-header py-3">
+        <h1 class="font-bold uppercase text-2xl"><%= t(".title") %></h1>
+      </div>
+      <div class="my-8">
+        <%= t(".description") %>
+      </div>
 
-  <p><%= t(".description") %></p>
-
-  <%= form_for :password_reset,
-        url: user_password_path(id: @user.id, token: @user.confirmation_token),
-        html: { method: :put } do |form| %>
-    <div class="password-field">
-      <%= form.label :password %>
-      <%= form.password_field :password %>
+      <%= form_for :password_reset,
+            url: user_password_path(id: @user.id, token: @user.confirmation_token),
+            html: { method: :put } do |form| %>
+        <div class="my-2">
+          <%= form.label :password, class: "font-bold" %>
+          <%= form.password_field(
+            :password,
+            class: %w[
+              w-full
+              mt-2
+              p-3
+              rounded-lg
+              focus:outline-none
+              focus:shadow-outline
+            ]
+          ) %>
+        </div>
+        <div class="submit-field">
+          <%= form.submit class: "purple-btn w-full mt-9 p-2" %>
+        </div>
+      <% end %>
     </div>
-
-    <div class="submit-field">
-      <%= form.submit %>
-    </div>
-  <% end %>
+  </div>
 </div>
