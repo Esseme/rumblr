@@ -4,6 +4,7 @@ class User < ApplicationRecord
   friendly_id :name, use: :slugged
 
   has_many :articles
+  has_many :comments
 
   validates :name, presence: true
 end
