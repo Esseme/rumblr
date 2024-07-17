@@ -12,8 +12,6 @@ RSpec.describe "Guest visits the home page" do
     expect(page).not_to have_content "Edit Article"
   end
   context "when guest clicks article title" do
-    it "is clickable" do
-    end
     it "opens the article show page" do
       create :article, title: "TEST_ARTICLE_1", content: "My content"
       create :article, title: "TEST_ARTICLE_2", content: "Other content"
@@ -26,6 +24,17 @@ RSpec.describe "Guest visits the home page" do
       expect(page).to have_content "My content"
       expect(page).not_to have_content "TEST_ARTICEL_2"
       expect(page).not_to have_content "Other content"
+    end
+
+    it "shows the need to signin in order to comment" do
+      create :article, title: "TEST_ARTICLE_1", content: "My content"
+
+      visit root_path
+
+      click_link("TEST_ARTICLE_1")
+
+      expect(page).to have_content "Signin to add a comment"
+      expect(page).to have_link "Signin to add a comment"
     end
   end
 end
