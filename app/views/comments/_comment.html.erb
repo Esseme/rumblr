@@ -1,0 +1,35 @@
+<% if signed_in? %>
+  <div>
+    <%= form_for comment do |f| %>
+      <% if comment.errors.any? %>
+        <div style="color: red">
+          <h2><%= t '.errors' , count: comment.errors.count %> </h2>
+          <ul>
+            <% comment.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+
+      <% end %>
+      <%= f.text_area :body, placeholder: "Add a comment" %>
+      <%= f.hidden_field :article_id, value: comment.article.id %>
+      <div>
+        <%= f.submit "Submit", class: "purple-btn w-66" %>
+      </div>
+    <% end %>
+  <% else %>
+    <p class="text-gray-700"><%= link_to "Signin to add a comment", sign_in_path %></p>
+  <% end %>
+  <% if comment.present? %>
+    <p class="font-bold uppercase text-xl"> Comments </p>
+    <div class="comments">
+      <% comment.article.comments.each do |comment| %>
+        <div>
+          <%= comment.user.name %>
+          <%= comment.body %>
+        </div>
+      <% end %>
+    </div>
+ </div>
+ <% end %>
