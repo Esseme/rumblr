@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
 
   def show
     @article = Article.find(params[:id])
+    @comment = Comment.new(article: @article, user: current_user) if signed_in?
   end
 
   def edit

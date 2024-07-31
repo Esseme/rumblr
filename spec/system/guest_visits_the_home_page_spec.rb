@@ -35,6 +35,20 @@ RSpec.describe "Guest visits the home page" do
 
       expect(page).to have_content "Signin to add a comment"
       expect(page).to have_link "Signin to add a comment"
+      expect(page).not_to have_content "Comments"
+    end
+  end
+
+  context "when guest signs in" do
+    it "displays the comment form" do
+      article = create :article, title: "TEST_ARTICLE_1", content: "My content"
+
+      user = create(:user)
+      visit article_path(article, as: user)
+
+      expect(page).to have_content "Comments"
+      expect(page).not_to have_content "Signin to add a comment"
+      expect(page).to have_field "comment_body"
     end
   end
 end

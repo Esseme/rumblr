@@ -12,7 +12,14 @@
         <%= link_to "Edit", edit_article_path(@article),
                     class: "purple-btn w-96" %>
       <% end %>
-      <p class="text-gray-700"><%= link_to "Signin to add a comment", sign_in_path %></p>
+      <% if signed_in? %>
+        <p> Comments </p>
+        <%= form_for @comment do |f| %>
+          <%= f.text_area :body %>
+        <% end %>
+      <% else %>
+        <p class="text-gray-700"><%= link_to "Signin to add a comment", sign_in_path %></p>
+      <% end %>
     </div>
   </div>
 </div>

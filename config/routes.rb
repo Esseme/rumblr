@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   resources :articles
   resources :users
   resources :authors, only: :show
-
+  resources :comments
   resources :users,
     only: Clearance.configuration.user_actions do
       resource :password,
