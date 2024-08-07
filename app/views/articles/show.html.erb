@@ -13,9 +13,17 @@
                     class: "purple-btn w-96" %>
       <% end %>
       <% if signed_in? %>
-        <p> Comments </p>
+        <div> Comments </div>
+        <div class="comments">
+          <% @comments.each do |comment| %>
+            <div><%= comment.user.name %></div>
+            <div><%= comment.body %></div>
+        </div>
+        <% end %>
         <%= form_for @comment do |f| %>
           <%= f.text_area :body %>
+          <%= f.hidden_field :article_id, value: @article.id %>
+          <%= f.submit "Submit" %>
         <% end %>
       <% else %>
         <p class="text-gray-700"><%= link_to "Signin to add a comment", sign_in_path %></p>
