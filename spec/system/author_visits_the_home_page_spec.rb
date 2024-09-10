@@ -48,7 +48,7 @@ RSpec.describe "Author visits the home page" do
   end
 
   context "author edits the comment on their own article" do
-    xit "shows their editted coment" do
+    it "shows their editted comment" do
       user = create(:user)
       article = create(
         :article,
@@ -62,14 +62,36 @@ RSpec.describe "Author visits the home page" do
       click_button "Submit"
       visit article_path(article, as: user)
       within(".comments") do
-        click_button "Edit"
-        fill_in "comment_body", with: "This is an editted comment"
+        click_link "Edit"
       end
+      fill_in "comment_body", with: "This is an editted comment"
       click_button "Submit"
 
       within(".comments") do
         expect(page).to have_content user.name
         expect(page).to have_content "This is an editted comment"
+      end
+    end
+  end
+
+  context "author isn't the one who posted the comment" do
+    it "shouldn't show the edit link" do
+      user = create(:user)
+      other_user = create(:user)
+      article = create(
+        :article,
+        content: "My awesome content",
+        title: "This is my awesome title",
+        user: user
+      )
+
+      visit article_path(article, as: user)
+      fill_in "comment_body", with: "This is a sample comment"
+      click_button "Submit"
+
+      visit article_path(article, as: other_user)
+      within(".comments") do
+        expect(page).not_to have_link "Edit"
       end
     end
   end
