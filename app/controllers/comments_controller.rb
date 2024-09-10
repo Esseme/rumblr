@@ -18,6 +18,13 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
+  def update
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
+      redirect_to @comment.article, notice: t(".success")
+    end
+  end
+
   private
 
   def comment_params

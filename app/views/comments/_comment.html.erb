@@ -28,6 +28,9 @@
         <div>
           <%= comment.user.name %>
           <%= comment.body %>
+          <% if comment.user.id == current_user.id %>
+            <%= link_to "Edit", edit_comment_path(comment) %>
+          <% end %>
         </div>
       <% end %>
     </div>
