@@ -70,3 +70,5 @@ en:
       cannot_create: "Comment can't be blank"
     update:
       success: "Comment was updated successfully"
+    comment:
+      edit: "Edit"

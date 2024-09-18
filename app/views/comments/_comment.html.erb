@@ -42,8 +42,8 @@
         <div class="flex justify text-gray-500 dark:text-gray-400 mb-2
           border-b border-gray-200 dark:border-gray-700 dark:bg-gray-900">
           <%= comment.body %>
-        <% if comment.user.id == current_user.id %>
-          <%= link_to "Edit", edit_comment_path(comment), class:
+        <% if comment.user_id == current_user.id %>
+          <%= link_to t(".edit"), edit_comment_path(comment), class:
             "hover:text-purple-500 hover:underline ml-2" %>
         <% end %>
         </div>
