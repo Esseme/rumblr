@@ -21,7 +21,13 @@ class CommentsController < ApplicationController
   def update
     @comment = Comment.find(params[:id])
     if @comment.update(comment_params)
-      redirect_to @comment.article, notice: t(".success")
+      if @comment.previously_changed?
+        redirect_to @comment.article, notice: t(".no_edit")
+      else
+        redirect_to @comment.article, notice: t(".success")
+      end
+    else
+      render :edit, status: :unprocessable_entity
     end
   end
 

@@ -70,5 +70,6 @@ en:
       cannot_create: "Comment can't be blank"
     update:
       success: "Comment was updated successfully"
+      no_edit: "No changes were made to the comment"
     comment:
       edit: "Edit"
