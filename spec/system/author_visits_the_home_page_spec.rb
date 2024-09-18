@@ -85,4 +85,15 @@ RSpec.describe "Author visits the home page" do
       end
     end
   end
+
+  context "author attempts to edit their comment but changes their mind" do
+    it "shows the unedited comment with a flash" do
+      user = create(:user)
+      comment = create(:comment)
+      visit edit_comment_path(comment, as: user)
+      click_button "Submit"
+
+      expect(page).to have_content "No changes were made to the comment"
+    end
+  end
 end
