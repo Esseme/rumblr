@@ -76,20 +76,10 @@ RSpec.describe "Author visits the home page" do
 
   context "author isn't the one who posted the comment" do
     it "shouldn't show the edit link" do
-      user = create(:user)
       other_user = create(:user)
-      article = create(
-        :article,
-        content: "My awesome content",
-        title: "This is my awesome title",
-        user: user
-      )
+      comment = create :comment
 
-      visit article_path(article, as: user)
-      fill_in "comment_body", with: "This is a sample comment"
-      click_button "Submit"
-
-      visit article_path(article, as: other_user)
+      visit article_path comment.article, as: other_user
       within(".comments") do
         expect(page).not_to have_link "Edit"
       end
