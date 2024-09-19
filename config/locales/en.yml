@@ -73,3 +73,6 @@ en:
       no_edit: "No changes were made to the comment"
     comment:
       edit: "Edit"
+      delete: "Delete"
+    destroy:
+      comment_deleted: "Comment was successfully deleted"

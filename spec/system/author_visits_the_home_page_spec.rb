@@ -96,4 +96,20 @@ RSpec.describe "Author visits the home page" do
       expect(page).to have_content "No changes were made to the comment"
     end
   end
+
+  context "author deletes their comment" do
+    it "should delete the comment" do
+      user = create(:user)
+      comment = create(:comment, user: user)
+      visit article_path comment.article, as: user
+      within(".comments") do
+        expect(page).to have_content comment.body
+        click_link "Delete"
+      end
+      expect(page).to have_content "Comment was successfully deleted"
+      within(".comments") do
+        expect(page).not_to have_content comment.body
+      end
+    end
+  end
 end
