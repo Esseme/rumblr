@@ -22,7 +22,7 @@ class ArticlesController < ApplicationController
   def show
     @article = Article.find(params[:id])
     @comment = Comment.new(article: @article, user: current_user) if signed_in?
-    @comments = @article.comments
+    @comments = @article.comments.order(created_at: :desc).page params[:page]
   end
 
   def edit

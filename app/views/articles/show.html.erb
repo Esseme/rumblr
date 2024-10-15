@@ -14,7 +14,8 @@
       <% end %>
     </div>
       <div class="mt-4">
-        <%= render partial: "comments/comment", locals: { comment: @comment } %>
+        <%= render 'comments/form', comment: @comment %>
+        <%= render 'comments/comments_section', comments: @comments %>
       </div>
   </div>
 </div>

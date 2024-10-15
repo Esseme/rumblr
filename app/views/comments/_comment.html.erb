@@ -25,7 +25,7 @@
       <%= link_to "Signin to add a comment", sign_in_path %>
     </p>
   <% end %>
-  <% if comment.present? %>
+  <% if @comment.present? %>
     <div class="max-w-2xl mx-auto px-4 mt-5">
       <div class="flex justify-between items-center mb-6">
         <p class="text-lg lg:text-2xl font-bold text-gray-900 -ml-4">
@@ -34,9 +34,12 @@
       </div>
     </div>
     <div class="comments -mt-6">
-      <% comment.article.comments.each do |comment| %>
+      <% @comments.each do |comment| %>
         <div class="flex justify items-center mb-2">
           <%= comment.user.name %>
+          <div class="text-gray-600 text-sm ml-2">
+            <%= time_ago_in_words(comment.created_at) %> ago
+          </div>
         </div>
         <div class="flex justify text-gray-700 dark:text-gray-400 mb-2
           border-b border-gray-200 dark:border-gray-700">
@@ -50,6 +53,7 @@
         <% end %>
         </div>
       <% end %>
+      <%= paginate @comments %>
     </div>
  </div>
  <% end %>
