@@ -395,6 +395,7 @@ DEPENDENCIES
   honeybadger (~> 5.15)
   importmap-rails
   jbuilder
+  kaminari
   pg
   puma (~> 6.4)
   rails (~> 7.2.1)
