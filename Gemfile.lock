@@ -154,7 +154,8 @@ GEM
     google-protobuf (4.27.5-x86_64-linux)
       bigdecimal
       rake (>= 13)
-    honeybadger (5.15.6)
+    honeybadger (5.19.1)
+      logger
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     importmap-rails (2.0.1)
@@ -391,7 +392,7 @@ DEPENDENCIES
   dotenv-rails
   factory_bot_rails
   friendly_id
-  honeybadger (~> 5.15)
+  honeybadger (~> 5.19)
   importmap-rails
   jbuilder
   kaminari
