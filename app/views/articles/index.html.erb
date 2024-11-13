@@ -1,16 +1,5 @@
 <div class="relative py-3 mx-auto max-w-lg my-4">
   <% @articles.each do |article| %>
-    <div class="max-w-lg rounded overflow-hidden shadow-xl p-10 mb-10">
-      <p class="text-xl font-bold mb-2"><%= link_to article.title, article %></p>
-      <p class="text-gray-700"><%= article.content %></p>
-      <% if ArticlePolicy.new(current_user, article).edit? %>
-        <p class="text-gray-700 float-right">
-          <%= link_to t(".edit_article"), edit_article_path(article.id),
-          class: "border-b-2 border-purple-500 border-opacity-0
-          hover:border-opacity-100 hover:text-purple-500
-          duration-200 cursor-pointer active"%>
-        </p>
-      <% end %>
-    </div>
+    <%= render article %>
   <% end %>
 </div>
