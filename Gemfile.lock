@@ -226,7 +226,7 @@ GEM
     psych (5.2.0)
       stringio
     public_suffix (5.0.5)
-    puma (6.4.3)
+    puma (6.5.0)
       nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.1.8)
@@ -397,7 +397,7 @@ DEPENDENCIES
   jbuilder
   kaminari
   pg
-  puma (~> 6.4)
+  puma (~> 6.5)
   rails (~> 7.2.2)
   recipient_interceptor (~> 0.3.3)
   redis (~> 5.3)
