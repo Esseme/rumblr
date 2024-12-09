@@ -39,4 +39,15 @@ RSpec.describe "User creates an article" do
       expect(page).to have_content "Content can't be blank"
     end
   end
+
+  it "displays the article's timestamp in the correct format" do
+    user = create(:user)
+    visit root_path(as: user)
+    fill_in "Title", with: "This is my awesome title"
+    fill_in "Content", with: "My awesome content"
+    click_button "Submit"
+
+    article = Article.last
+    expect(page).to have_content article.created_at.strftime("%B %d, %Y")
+  end
 end

@@ -38,6 +38,8 @@ en:
       title: "Title:"
       article: "Article "
       content: "Content:"
+      by: "By"
+      published_on: "Published on %{date}"
     new:
       errors: 
         one: "1 error prohibited this article from being saved"
