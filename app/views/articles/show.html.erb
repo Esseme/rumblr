@@ -6,6 +6,11 @@
       </h1>
     </div>
 
+    <div class="text-sm">
+      <%= t(".by") %>
+      <span class="text-purple-500"><%= @article.user.name %></span>
+      <%= t(".published_on", date: @article.created_at.strftime("%B %d, %Y")) %>
+    </div>
     <p><%= @article.content %></p>
     <div class="space-y-4 flex text-center">
       <% if ArticlePolicy.new(current_user, @article).edit? %>
