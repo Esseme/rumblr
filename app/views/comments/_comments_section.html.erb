@@ -7,25 +7,7 @@
     </div>
   </div>
   <div class="comments -mt-6">
-    <% @comments.each do |comment| %>
-      <div class="flex justify items-center mb-2">
-        <%= comment.user.name %>
-        <div class="text-gray-600 text-sm ml-2">
-          <%= time_ago_in_words(comment.created_at) %> ago
-        </div>
-      </div>
-      <div class="flex justify text-gray-700 dark:text-gray-400 mb-2
-        border-b border-gray-200 dark:border-gray-700">
-        <%= comment.body %>
-      <% if comment.user_id == current_user.id %>
-        <%= link_to t(".edit"), edit_comment_path(comment), class:
-          "hover:text-purple-500 hover:underline ml-2" %>
-        <%= link_to t(".delete"), comment_path(comment),
-          data: {"turbo-method": :delete},
-          class: "hover:text-purple-500 hover:underline ml-2" %>
-      <% end %>
-      </div>
-    <% end %>
+    <%= render @comments %>
     <%= paginate @comments %>
   </div>
 </div>
