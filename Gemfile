@@ -7,7 +7,7 @@ gem "administrate", git: "https://github.com/oroth8/administrate.git"
 gem "bootsnap", require: false
 gem "clearance"
 gem "friendly_id"
-gem "honeybadger", "~> 5.28"
+gem "honeybadger", "~> 6.0"
 gem "importmap-rails"
 gem "jbuilder"
 gem "kaminari"
