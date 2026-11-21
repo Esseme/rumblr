@@ -13,7 +13,7 @@
 
       <% end %>
       <%= f.text_area :body, rows: "6", placeholder: "Add a comment",
-        class: %w(w-full h-32 mt-2 p-3 rounded-lg focus:outline-none
+        class: %w(w-full h-32 mt-2 p-3 rounded-lg focus:outline-hidden
         focus:shadow-outline") %>
       <%= f.hidden_field :article_id, value: comment.article.id %>
       <div class="space-y-4 flex text-center">

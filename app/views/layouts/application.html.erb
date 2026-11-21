@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
@@ -27,7 +27,7 @@
                   <li class="mb-1">
                     <%= render partial: "greeting" %>
                   </li>
-                  <li class="mb-1 link hover:border-opacity-100
+                  <li class="mb-1 link hover:border-purple-500
                              hover:text-purple-500 duration-200
                              cursor-pointer active">
                     <%= link_to t(".new_article"), new_article_path %>
@@ -39,7 +39,7 @@
                       method: :delete,
                       class: %w(
                         link
-                        hover:border-opacity-100
+                        hover:border-purple-500
                         hover:text-purple-500
                         duration-200
                         cursor-pointer active"
@@ -53,7 +53,7 @@
                       sign_in_path,
                       class: %w(
                         link
-                        hover:border-opacity-100
+                        hover:border-purple-500
                         hover:text-purple-500
                         duration-200
                         cursor-pointer active"
