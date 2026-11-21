@@ -1,5 +1,5 @@
 <div class="relative py-3 mx-auto max-w-lg my-4">
-  <div class="max-w-lg rounded overflow-hidden shadow-lg p-20 mb-80">
+  <div class="max-w-lg rounded-sm overflow-hidden shadow-lg p-20 mb-80">
     <div class="card-header py-3">
       <h1 class="font-bold uppercase text-2xl">New article</h1>
     </div>
@@ -21,13 +21,13 @@
         <div class="space-y-2">
           <%= f.label :title, class: "font-bold" %>
           <%= f.text_field :title, class: "w-full mt-2 p-3 rounded-lg
-          focus:outline-none focus:shadow-outline" %>
+          focus:outline-hidden focus:shadow-outline" %>
         </div>
 
         <div class="space-y-2">
           <%= f.label :content, class: "font-bold" %>
           <%= f.text_area :content, class: "w-full h-32 mt-2 p-3 rounded-lg
-          focus:outline-none focus:shadow-outline" %>
+          focus:outline-hidden focus:shadow-outline" %>
         </div>
         <div class="space-y-4 flex justify-center">
           <%= f.submit t('.submit'), class: "purple-btn w-96" %>
