@@ -10,6 +10,8 @@ gem "friendly_id"
 gem "honeybadger", "~> 6.10"
 gem "importmap-rails"
 gem "jbuilder"
+# Rails 7.2 passes create_additions to JSON.parse.
+gem "json", "~> 2.3"
 gem "kaminari"
 gem "pg"
 gem "puma", "~> 8.0"
